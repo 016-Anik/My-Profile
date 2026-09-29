@@ -1,4 +1,3 @@
-# My-Profile
 # My Profile
 
 ## 👩‍💻 Biodata
@@ -13,9 +12,7 @@ Berikut adalah biodata dan profile saya yang dibuat untuk memenuhi tugas **P1 Pe
 
 ### 🎥 Video P1
 
-[▶️ Lihat Video P1](#)
-
-> Link video akan ditambahkan setelah video P1 selesai diunggah.
+[▶️ Lihat Video P1](https://youtu.be/bt-uXdfdT8k)
 
 ### 🔗 GitHub
 
@@ -45,6 +42,7 @@ Sistem informasi yang digunakan untuk membantu proses pengelolaan dan pencatatan
 **Role:** Frontend & Backend Developer
 
 **Repository:**
+
 [Absensi Siswa](https://github.com/taqiyaa/AbsensiSiswaBE)
 
 ---
