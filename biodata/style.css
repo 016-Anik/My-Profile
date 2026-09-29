@@ -1,0 +1,440 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background: linear-gradient(
+        135deg,
+        #fff7fb,
+        #f8f3ff,
+        #f1f9ff
+    );
+    color: #51485c;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 70px 20px 55px;
+    overflow: hidden;
+}
+
+.profile-photo {
+    width: 155px;
+    height: 155px;
+    margin: 0 auto 20px;
+    padding: 5px;
+    background: white;
+    border: 2px solid #dec8eb;
+    border-radius: 50%;
+    box-shadow: 0 12px 30px rgba(166, 137, 181, 0.18);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.hero h1 {
+    color: #806091;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: #9a89a6;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nim {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 17px;
+    background: #eee3f6;
+    color: #806091;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero-decoration {
+    position: absolute;
+    color: #d7b9e5;
+    font-size: 40px;
+}
+
+.decoration-one {
+    top: 55px;
+    left: 12%;
+}
+
+.decoration-two {
+    top: 90px;
+    right: 13%;
+}
+
+.hero-decoration-bottom {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+
+.container {
+    width: min(900px, 92%);
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #eee1f4;
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(167, 143, 179, 0.1);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px rgba(167, 143, 179, 0.18);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.section-title span {
+    font-size: 25px;
+}
+
+.section-title h2 {
+    color: #806091;
+    font-size: 23px;
+}
+
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.skill-info span:last-child {
+    color: #a18eaa;
+    font-size: 14px;
+}
+
+.progress {
+    width: 100%;
+    height: 11px;
+    background: #f0e9f4;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        #d9b9e8,
+        #a9d8ed
+    );
+}
+
+.html-css {
+    width: 45%;
+}
+
+.python {
+    width: 35%;
+}
+
+
+.project-card {
+    display: flex;
+    gap: 22px;
+    padding: 22px;
+    background: #fcf8ff;
+    border: 1px solid #eee1f4;
+    border-radius: 20px;
+}
+
+.project-icon {
+    min-width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0e2f7;
+    border-radius: 17px;
+    font-size: 27px;
+}
+
+.project-content {
+    flex: 1;
+}
+
+.project-content h3 {
+    color: #7e5a90;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.project-role {
+    margin-top: 14px;
+    color: #76667d;
+}
+
+.project-role strong {
+    color: #806091;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.project-tags span {
+    padding: 5px 12px;
+    background: #eee4f6;
+    color: #806091;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.project-link,
+.github-link {
+    display: inline-block;
+    color: #806091;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.project-link:hover,
+.github-link:hover {
+    color: #b17cc7;
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   GITHUB
+========================= */
+
+.github-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    background: #f8f3fc;
+    border-radius: 18px;
+}
+
+.github-box strong {
+    color: #806091;
+}
+
+.github-box p {
+    font-size: 14px;
+}
+
+.commit-box {
+    margin-top: 20px;
+}
+
+.commit-box h3 {
+    color: #806091;
+    margin-bottom: 5px;
+}
+
+.commit-placeholder {
+    margin-top: 15px;
+    padding: 35px 20px;
+    border: 2px dashed #d9c4e4;
+    border-radius: 18px;
+    text-align: center;
+    color: #a18ba9;
+    background: #fdfaff;
+}
+
+.education-list {
+    position: relative;
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid #f0e6f3;
+}
+
+.education-item:last-child {
+    border-bottom: none;
+}
+
+.education-year {
+    color: #9a7fa9;
+    font-weight: 700;
+}
+
+.education-content h3 {
+    color: #806091;
+    font-size: 17px;
+}
+
+.education-content p {
+    color: #9b8ca3;
+}
+
+
+.identity {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.identity-item {
+    padding: 17px;
+    background: #fcf8ff;
+    border: 1px solid #eee4f4;
+    border-radius: 16px;
+}
+
+.identity-item span {
+    display: block;
+    margin-bottom: 3px;
+    color: #a18ca9;
+    font-size: 13px;
+}
+
+.identity-item strong {
+    color: #70567e;
+}
+
+footer {
+    padding: 30px 20px 40px;
+    color: #998aa0;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer span {
+    color: #d88fae;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.footer-links a {
+    color: #806091;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: #b17cc7;
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 50px 15px 40px;
+    }
+
+    .profile-photo {
+        width: 125px;
+        height: 125px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .hero-decoration {
+        font-size: 28px;
+    }
+
+    .decoration-one {
+        left: 5%;
+    }
+
+    .decoration-two {
+        right: 5%;
+    }
+
+    .card {
+        padding: 22px 18px;
+        border-radius: 20px;
+    }
+
+    .section-title h2 {
+        font-size: 20px;
+    }
+
+    .project-card {
+        flex-direction: column;
+    }
+
+    .github-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .education-item {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+
+    .identity {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 92%;
+    }
+}
