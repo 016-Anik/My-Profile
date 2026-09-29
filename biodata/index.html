@@ -1,1214 +1,315 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Profile | Sri Maulani</title>
-
-    <style>
-        
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
-
-        :root {
-            --pink: #f6c6d8;
-            --pink-dark: #d887a8;
-            --pink-soft: #fff1f6;
-
-            --purple: #dcd1f3;
-            --purple-dark: #8f7ab5;
-            --purple-soft: #f6f1ff;
-
-            --blue: #cce5f2;
-            --blue-dark: #6797b0;
-            --blue-soft: #eef9fd;
-
-            --green: #d8e9d3;
-            --green-dark: #76946f;
-            --green-soft: #f1f9ee;
-
-            --yellow: #f8e9bc;
-            --yellow-dark: #a78d4e;
-
-            --cream: #fffaf7;
-            --white: #ffffff;
-
-            --text: #625c68;
-            --heading: #51495a;
-            --muted: #918994;
-
-            --border: #eee3eb;
-
-            --shadow:
-                0 5px 15px rgba(130, 105, 125, 0.10);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Quicksand", sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 5% 10%,
-                    #fbdde8 0,
-                    transparent 20%
-                ),
-                radial-gradient(
-                    circle at 95% 15%,
-                    #e4dcfa 0,
-                    transparent 20%
-                ),
-                radial-gradient(
-                    circle at 10% 90%,
-                    #dff2f8 0,
-                    transparent 20%
-                ),
-                var(--cream);
-
-            color: var(--text);
-
-            min-height: 100vh;
-
-            padding: 18px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-
-            margin: auto;
-
-            background: rgba(255, 255, 255, 0.82);
-
-            border: 1px solid var(--border);
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 15px 40px rgba(130, 105, 125, 0.12);
-
-            overflow: hidden;
-        }
-
-        nav {
-            height: 52px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 22px;
-
-            background: rgba(255, 255, 255, 0.92);
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        .logo {
-            font-size: 14px;
-            font-weight: 700;
-
-            color: var(--pink-dark);
-
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 17px;
-
-            font-size: 10px;
-
-            font-weight: 600;
-
-            color: #817887;
-        }
-
-        .nav-links a {
-            transition: 0.25s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--pink-dark);
-
-            transform: translateY(-2px);
-        }
-
-        .profile {
-            text-align: center;
-
-            padding: 28px 20px 20px;
-        }
-
-        .profile-photo {
-            width: 78px;
-            height: 78px;
-
-            margin: auto;
-
-            object-fit: cover;
-
-            border-radius: 50%;
-
-            border: 4px solid white;
-
-            box-shadow:
-                0 0 0 3px var(--pink),
-                0 5px 15px rgba(130, 105, 125, 0.15);
-
-            background: var(--purple-soft);
-        }
-
-        .hello {
-            margin-top: 9px;
-
-            font-size: 9px;
-
-            font-weight: 700;
-
-            color: var(--purple-dark);
-        }
-
-        .profile h1 {
-            margin-top: 1px;
-
-            font-size: 23px;
-
-            color: var(--heading);
-        }
-
-        .profile-subtitle {
-            margin-top: 2px;
-
-            font-size: 9px;
-
-            font-weight: 500;
-
-            color: #8a8290;
-        }
-
-        .profile-button {
-            display: inline-block;
-
-            margin-top: 10px;
-
-            padding: 6px 13px;
-
-            background: var(--pink);
-
-            border: 1px solid #efb5ca;
-
-            border-radius: 20px;
-
-            color: #725665;
-
-            font-size: 8px;
-
-            font-weight: 700;
-
-            box-shadow:
-                0 3px 8px rgba(217, 135, 168, 0.18);
-
-            transition: 0.25s ease;
-        }
-
-        .profile-button:hover {
-            background: var(--pink-dark);
-
-            color: white;
-
-            transform: translateY(-2px);
-        }
-
-
-        .content {
-            padding: 0 18px 20px;
-        }
-
-        .section {
-            margin-top: 12px;
-        }
-
-        .section-title {
-            margin-bottom: 5px;
-
-            font-size: 9px;
-
-            font-weight: 700;
-
-            color: var(--purple-dark);
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.92);
-
-            border: 1px solid var(--border);
-
-            border-radius: 8px;
-
-            padding: 10px 12px;
-
-            box-shadow: var(--shadow);
-
-            transition: 0.25s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 8px 20px rgba(130, 105, 125, 0.13);
-        }
-
-        .card h3 {
-            font-size: 10px;
-
-            color: var(--heading);
-
-            margin-bottom: 3px;
-        }
-
-        .card p {
-            font-size: 8px;
-
-            line-height: 1.6;
-        }
-
-        .motivation {
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--pink-soft),
-                    white
-                );
-
-            border-left: 3px solid var(--pink);
-        }
-
-        .tech-grid {
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 5px;
-        }
-
-        .tech-card {
-            padding: 8px 10px;
-
-            border: 1px solid var(--border);
-
-            border-radius: 7px;
-
-            background: white;
-
-            transition: 0.25s ease;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .tech-card:nth-child(1) {
-            background: #fff1f6;
-        }
-
-        .tech-card:nth-child(2) {
-            background: #f6f1ff;
-        }
-
-        .tech-card:nth-child(3) {
-            background: #eef9fd;
-        }
-
-        .tech-card:nth-child(4) {
-            background: #f1f9ee;
-        }
-
-        .tech-name {
-            font-size: 8px;
-
-            font-weight: 700;
-
-            color: var(--heading);
-        }
-
-        .badge {
-            display: inline-block;
-
-            margin-top: 3px;
-
-            padding: 2px 6px;
-
-            border-radius: 10px;
-
-            font-size: 6px;
-
-            font-weight: 700;
-        }
-
-        .beginner {
-            background: var(--blue);
-
-            color: var(--blue-dark);
-        }
-
-        .medium {
-            background: var(--pink);
-
-            color: #875a6e;
-        }
-
-        .learning {
-            background: var(--yellow);
-
-            color: var(--yellow-dark);
-        }
-
-        .project {
-            display: flex;
-
-            align-items: flex-start;
-
-            gap: 10px;
-        }
-
-        .project-icon {
-            width: 30px;
-            height: 30px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            flex-shrink: 0;
-
-            border-radius: 8px;
-
-            background: var(--purple-soft);
-
-            color: var(--purple-dark);
-
-            font-size: 14px;
-        }
-
-        .project-name {
-            font-size: 10px;
-
-            font-weight: 700;
-
-            color: var(--heading);
-        }
-
-        .project-role {
-            margin-top: 2px;
-
-            font-size: 7px;
-
-            color: var(--pink-dark);
-
-            font-weight: 700;
-        }
-
-        .project-description {
-            margin-top: 3px;
-
-            font-size: 8px;
-        }
-
-        .project-link {
-            display: inline-block;
-
-            margin-top: 5px;
-
-            font-size: 7px;
-
-            font-weight: 700;
-
-            color: var(--blue-dark);
-
-            transition: 0.2s ease;
-        }
-
-        .project-link:hover {
-            color: var(--pink-dark);
-
-            text-decoration: underline;
-        }
-
-
-        /* ==================================================
-           4. GITHUB COMMIT
-        ================================================== */
-
-        .commit-box {
-            background: #faf7ff;
-
-            border-left: 3px solid var(--purple);
-
-            border-radius: 7px;
-
-            padding: 9px 11px;
-        }
-
-        .commit-box code {
-            display: block;
-
-            font-family: monospace;
-
-            font-size: 7px;
-
-            line-height: 1.8;
-
-            color: #766b82;
-        }
-
-        .github-link {
-            display: inline-block;
-
-            margin-top: 6px;
-
-            padding: 4px 8px;
-
-            border-radius: 12px;
-
-            background: var(--purple);
-
-            color: #655a78;
-
-            font-size: 7px;
-
-            font-weight: 700;
-
-            transition: 0.25s ease;
-        }
-
-        .github-link:hover {
-            background: var(--purple-dark);
-
-            color: white;
-        }
-
-        .education {
-            display: grid;
-
-            grid-template-columns: 1fr 2fr 1.5fr;
-
-            gap: 7px;
-
-            font-size: 7px;
-        }
-
-        .education div {
-            padding: 8px;
-
-            border-radius: 7px;
-
-            background: #fffdf8;
-
-            border: 1px solid #f0eadb;
-        }
-
-        .education strong {
-            display: block;
-
-            margin-bottom: 2px;
-
-            color: var(--heading);
-
-            font-size: 8px;
-        }
-
-        .identity {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 7px;
-        }
-
-        .identity-item {
-            padding: 8px;
-
-            border-radius: 7px;
-
-            background: var(--blue-soft);
-
-            border: 1px solid #e0eff5;
-        }
-
-        .identity-item:nth-child(2) {
-            background: var(--pink-soft);
-
-            border-color: #f5dce5;
-        }
-
-        .identity-item:nth-child(3) {
-            background: var(--purple-soft);
-
-            border-color: #e6def5;
-        }
-
-        .identity-label {
-            display: block;
-
-            font-size: 6px;
-
-            color: #948b96;
-
-            margin-bottom: 2px;
-        }
-
-        .identity-value {
-            font-size: 8px;
-
-            font-weight: 600;
-
-            color: var(--heading);
-        }
-
-        .theme-box {
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #fff0f5,
-                    #f6f1ff,
-                    #eef9fd
-                );
-        }
-
-        .theme-icons {
-            font-size: 19px;
-
-            letter-spacing: 2px;
-
-            white-space: nowrap;
-        }
-
-        .theme-box p {
-            font-size: 8px;
-        }
-
-        footer {
-            text-align: center;
-
-            padding: 14px;
-
-            border-top: 1px solid var(--border);
-
-            background: rgba(255, 255, 255, 0.75);
-        }
-
-        footer p {
-            font-size: 7px;
-
-            color: #8d8490;
-        }
-
-        footer strong {
-            color: var(--pink-dark);
-        }
-
-        .footer-links {
-            margin-top: 5px;
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 10px;
-        }
-
-        .footer-links a {
-            font-size: 7px;
-
-            color: var(--purple-dark);
-
-            font-weight: 700;
-
-            transition: 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--pink-dark);
-        }
-
-        .footer-dot {
-            color: #b7aeb8;
-
-            font-size: 7px;
-        }
-
-        @media (max-width: 600px) {
-
-            body {
-                padding: 8px;
-            }
-
-            .container {
-                border-radius: 15px;
-            }
-
-            nav {
-                padding: 0 13px;
-            }
-
-            .nav-links {
-                gap: 9px;
-
-                font-size: 7px;
-            }
-
-            .logo {
-                font-size: 10px;
-            }
-
-            .profile {
-                padding-top: 22px;
-            }
-
-            .profile-photo {
-                width: 65px;
-                height: 65px;
-            }
-
-            .profile h1 {
-                font-size: 20px;
-            }
-
-            .content {
-                padding: 0 10px 15px;
-            }
-
-            .tech-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .identity {
-                grid-template-columns: 1fr;
-            }
-
-            .education {
-                grid-template-columns: 1fr;
-            }
-
-            .theme-box {
-                align-items: flex-start;
-            }
-        }
-
-        @media (max-width: 380px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .profile h1 {
-                font-size: 19px;
-            }
-
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-photo {
-                width: 62px;
-                height: 62px;
-            }
-
-            .section-title {
-                font-size: 8px;
-            }
-
-            .card p {
-                font-size: 7.5px;
-            }
-        }
-
-    </style>
+    <title>Biodata | Sri Maulani</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 </head>
-
 
 <body>
 
-    <div class="container">
+    <header class="hero">
 
-        <nav>
+        <div class="hero-decoration decoration-one">✿</div>
+        <div class="hero-decoration decoration-two">♡</div>
 
-            <div class="logo">
-                SRI.DEV
+        <div class="profile-photo">
+            <img src="fotonew.jpeg" alt="Foto profil Sri Maulani">
+        </div>
+
+        <h1>Sri Maulani</h1>
+        <p class="subtitle">Mahasiswa Informatika</p>
+        <p class="nim">2024520016</p>
+
+        <div class="hero-decoration-bottom">
+            ☁️　🌷　☁️
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="card">
+            <div class="section-title">
+                <span>🌷</span>
+                <h2>Motivasi Hidup</h2>
             </div>
 
-            <div class="nav-links">
+            <p>
+                Saya ingin terus belajar dan berkembang, terutama di bidang teknologi.
+                Saya percaya setiap proses dan pengalaman yang saya jalani bisa menjadi
+                bekal untuk mencapai tujuan saya di masa depan.
+            </p>
+        </section>
 
-                <a href="#home">
-                    Home
-                </a>
-
-                <a href="#about">
-                    About
-                </a>
-
-                <a href="#projects">
-                    Projects
-                </a>
-
+        <section class="card">
+            <div class="section-title">
+                <span>💻</span>
+                <h2>Kemampuan Teknologi</h2>
             </div>
 
-        </nav>
+            <div class="skills">
 
-        <header
-            class="profile"
-            id="home"
-        >
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>HTML &amp; CSS</span>
+                        <span>Pemula</span>
+                    </div>
 
-            <img
-                src="fotonew.jpeg"
-                alt="Foto profil Sri Maulani"
-                class="profile-photo"
-            >
-
-            <p class="hello">
-                ✦ HELLO, I'M
-            </p>
-
-            <h1>
-                Sri Maulani
-            </h1>
-
-            <p class="profile-subtitle">
-                Informatics Student | Web Developer
-            </p>
-
-            <a
-                href="#about"
-                class="profile-button"
-            >
-                Explore My Profile ↓
-            </a>
-
-        </header>
-
-
-        <main class="content">
-
-            <section
-                class="section"
-                id="about"
-            >
-
-                <div class="section-title">
-                    1. Motivasi Hidup
+                    <div class="progress">
+                        <div class="progress-bar html-css"></div>
+                    </div>
                 </div>
 
-                <div class="card motivation">
 
-                    <h3>
-                        🌷 Motivasi Hidup
-                    </h3>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Python</span>
+                        <span>Pemula</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar python"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="card">
+            <div class="section-title">
+                <span>🌱</span>
+                <h2>Project</h2>
+            </div>
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    📚
+                </div>
+
+                <div class="project-content">
+
+                    <h3>Sistem Informasi Absensi Siswa</h3>
 
                     <p>
-                        Saya ingin terus mengembangkan kemampuan
-                        di bidang teknologi dan membuat aplikasi
-                        yang bermanfaat melalui ilmu yang saya pelajari.
+                        Sistem informasi untuk membantu proses pencatatan dan
+                        pengelolaan absensi siswa secara digital.
                     </p>
 
-                </div>
+                    <p>
+                        Project ini dikembangkan sebagai bagian dari tugas
+                        perkuliahan dengan frontend dan backend yang saling
+                        terhubung melalui REST API.
+                    </p>
 
-            </section>
-
-            <section class="section">
-
-                <div class="section-title">
-                    2. Kemampuan Teknologi
-                </div>
-
-                <div class="tech-grid">
-
-
-                    <div class="tech-card">
-
-                        <div class="tech-name">
-                            HTML & CSS
-                        </div>
-
-                        <span class="badge medium">
-                            Pemula
-                        </span>
-
+                    <div class="project-role">
+                        <strong>Peran:</strong>
+                        Frontend &amp; Backend Developer
                     </div>
 
-
-                    <div class="tech-card">
-
-                        <div class="tech-name">
-                            JavaScript
-                        </div>
-
-                        <span class="badge beginner">
-                            Pemula
-                        </span>
-
+                    <div class="project-tags">
+                        <span>SvelteKit</span>
+                        <span>TypeScript</span>
+                        <span>Express.js</span>
+                        <span>MySQL</span>
                     </div>
-
-
-                    <div class="tech-card">
-
-                        <div class="tech-name">
-                            Git & GitHub
-                        </div>
-
-                        <span class="badge beginner">
-                            Pemula
-                        </span>
-
-                    </div>
-
-
-                    <div class="tech-card">
-
-                        <div class="tech-name">
-                            Dart / Flutter
-                        </div>
-
-                        <span class="badge learning">
-                            Sedang dipelajari
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-            <section
-                class="section"
-                id="projects"
-            >
-
-                <div class="section-title">
-                    3. Proyek yang Telah Dibuat
-                </div>
-
-                <div class="card project">
-
-
-                    <div class="project-icon">
-                        ♡
-                    </div>
-
-
-                    <div>
-
-                        <div class="project-name">
-                            Sistem Informasi Absensi Siswa
-                        </div>
-
-                        <div class="project-role">
-                            Web Application
-                        </div>
-
-                        <p class="project-description">
-                            Sistem informasi yang dibuat untuk membantu
-                            proses pencatatan dan pengelolaan absensi
-                            siswa secara digital.
-                        </p>
-
-                        <p class="project-description">
-                            Sistem dikembangkan dengan frontend dan
-                            backend yang saling terhubung melalui REST API.
-                        </p>
-
-                        <p class="project-description">
-                            <strong>
-                                Peran:
-                            </strong>
-                            Frontend Developer & Backend Developer
-                        </p>
-
-                        <a
-                            href="LINK_REPOSITORY_ABSENSI"
-                            target="_blank"
-                            class="project-link"
-                        >
-                            Lihat Repository →
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-            <section class="section">
-
-                <div class="section-title">
-                    4. Bukti Commit
-                </div>
-
-                <div class="card commit-box">
-
-                    <code>
-                        $ git log --oneline -5
-                    </code>
-
-                    <code>
-                        docs(p1): init My Profile
-                    </code>
-
-                    <code>
-                        feat(p1): biodata + foto
-                    </code>
-
-                    <code>
-                        style(p1): tema + polish
-                    </code>
 
                     <a
-                        href="LINK_GITHUB_COMMITS"
+                        href="https://github.com/taqiyaa/AbsensiSiswaBE"
                         target="_blank"
-                        class="github-link"
+                        rel="noopener noreferrer"
+                        class="project-link"
                     >
-                        ♡ Lihat GitHub Commits
+                        Lihat Repository →
                     </a>
 
                 </div>
 
-            </section>
-
-            <section class="section">
-
-                <div class="section-title">
-                    5. Riwayat Pendidikan
-                </div>
-
-                <div class="education">
-
-
-                    <div>
-
-                        <strong>
-                            2024–Sekarang
-                        </strong>
-
-                        Mahasiswa
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-                            Universitas Madura
-                        </strong>
-
-                        Teknik Informatika
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-                            Peminatan
-                        </strong>
-
-                        Bisnis Intelijen
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-            <section class="section">
-
-                <div class="section-title">
-                    6. Identitas Pribadi
-                </div>
-
-                <div class="identity">
-
-
-                    <div class="identity-item">
-
-                        <span class="identity-label">
-                            Nama
-                        </span>
-
-                        <span class="identity-value">
-                            Sri Maulani
-                        </span>
-
-                    </div>
-
-
-                    <div class="identity-item">
-
-                        <span class="identity-label">
-                            NIM
-                        </span>
-
-                        <span class="identity-value">
-                            2024520016
-                        </span>
-
-                    </div>
-
-
-                    <div class="identity-item">
-
-                        <span class="identity-label">
-                            Lokasi
-                        </span>
-
-                        <span class="identity-value">
-                            Madura-Jawa Timur
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-            <section class="section">
-
-                <div class="section-title">
-                    7. Tampilan Modern dan Menarik
-                </div>
-
-                <div class="card theme-box">
-
-
-                    <div class="theme-icons">
-                        🌷 🦋 ☁️
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            Pastel Dreamy
-                        </h3>
-
-                        <p>
-                            Menggunakan kombinasi warna pastel,
-                            kartu sederhana, tipografi yang lembut,
-                            efek hover, serta desain responsif
-                            agar nyaman dilihat pada laptop maupun
-                            perangkat mobile.
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-            <section class="section">
-
-                <div class="section-title">
-                    8. Tema Tampilan yang Konsisten
-                </div>
-
-                <div class="card theme-box">
-
-
-                    <div class="theme-icons">
-                        ♡ ✦ 🌸
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            Pastel Dreamy
-                        </h3>
-
-                        <p>
-                            Saya memilih tema pastel karena ingin
-                            menampilkan sisi sederhana, lembut,
-                            dan ceria. Warna pink, lavender, biru,
-                            dan hijau pastel digunakan secara konsisten
-                            untuk menggambarkan proses belajar dan
-                            perkembangan saya.
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-
-
-        </main>
-
-        <footer>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="section-title">
+                <span>🐙</span>
+                <h2>Aktivitas GitHub</h2>
+            </div>
 
             <p>
-                Dibuat dengan
-                <strong>♥</strong>
-                oleh Sri Maulani
-                — P1 Pemrograman Platform
+                GitHub digunakan untuk menyimpan project dan mendokumentasikan
+                proses pengembangan melalui riwayat commit.
             </p>
 
+            <div class="github-box">
 
-            <div class="footer-links">
-
-                <a
-                    href="LINK_GITHUB_MY_PROFILE"
-                    target="_blank"
-                >
-                    GitHub Repository
-                </a>
-
-                <span class="footer-dot">
-                    •
-                </span>
+                <div>
+                    <strong>GitHub Profile</strong>
+                    <p>016-Anik</p>
+                </div>
 
                 <a
-                    href="LINK_VIDEO_P1"
+                    href="https://github.com/016-Anik"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    class="github-link"
                 >
-                    Video P1
+                    Kunjungi GitHub →
                 </a>
 
             </div>
 
-        </footer>
+            <div class="commit-box">
+
+                <h3>Riwayat Commit</h3>
+
+                <p>
+                    Bukti aktivitas pengembangan project melalui riwayat
+                    commit pada GitHub.
+                </p>
+
+                <div class="commit-placeholder">
+                    📸 Screenshot GitHub Commits
+                </div>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="section-title">
+                <span>🎓</span>
+                <h2>Riwayat Pendidikan</h2>
+            </div>
+
+            <div class="education-list">
+
+                <div class="education-item">
+                    <div class="education-year">
+                        2024 – Sekarang
+                    </div>
+
+                    <div class="education-content">
+                        <h3>Universitas Madura</h3>
+                        <p>Informatika</p>
+                    </div>
+                </div>
 
 
-    </div>
+                <div class="education-item">
+                    <div class="education-year">
+                        2021 – 2024
+                    </div>
+
+                    <div class="education-content">
+                        <h3>SMAN 3 Sampang</h3>
+                        <p>IPS</p>
+                    </div>
+                </div>
+
+
+                <div class="education-item">
+                    <div class="education-year">
+                        2018 – 2021
+                    </div>
+
+                    <div class="education-content">
+                        <h3>SMPN 2 Sampang</h3>
+                        <p>Sekolah Menengah Pertama</p>
+                    </div>
+                </div>
+
+
+                <div class="education-item">
+                    <div class="education-year">
+                        2012 – 2018
+                    </div>
+
+                    <div class="education-content">
+                        <h3>SDN Banyuanyar 1</h3>
+                        <p>Sekolah Dasar</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="card">
+            <div class="section-title">
+                <span>🌼</span>
+                <h2>Identitas Pribadi</h2>
+            </div>
+
+            <div class="identity">
+
+                <div class="identity-item">
+                    <span>Nama</span>
+                    <strong>Sri Maulani</strong>
+                </div>
+
+                <div class="identity-item">
+                    <span>NIM</span>
+                    <strong>2024520016</strong>
+                </div>
+
+                <div class="identity-item">
+                    <span>Program Studi</span>
+                    <strong>Informatika</strong>
+                </div>
+
+                <div class="identity-item">
+                    <span>Universitas</span>
+                    <strong>Universitas Madura</strong>
+                </div>
+
+                <div class="identity-item">
+                    <span>Domisili</span>
+                    <strong>Madura, Jawa Timur</strong>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Dibuat dengan <span>♥</span> oleh 2024520016 —
+            P1 Pemrograman Platform
+        </p>
+
+        <div class="footer-links">
+
+            <a
+                href="https://github.com/016-Anik"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+            <span>•</span>
+
+            <a href="#" target="_blank">
+                Video P1
+            </a>
+
+        </div>
+
+    </footer>
 
 </body>
-
 </html>
